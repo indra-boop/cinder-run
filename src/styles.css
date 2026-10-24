@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "@fontsource/fraunces/latin-600.css";
+@import "@fontsource/fraunces/latin-700.css";
+@import "@fontsource/outfit/latin-400.css";
+@import "@fontsource/outfit/latin-500.css";
+@import "@fontsource/outfit/latin-700.css";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --color-bg: #1a1218;
+  --color-surface: #2a1c22;
+  --color-ink: #120c10;
+  --color-fg: #f6efe6;
+  --color-muted: #b7a396;
+  --color-ember: #e07a3a;
+  --color-gold: #f0c14a;
+  --color-teal: #3ec8b0;
+  --color-border: #4a3036;
+  --radius: 1rem;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.stage {
+  width: min(100%, calc((100dvh - 1.25rem) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  max-height: calc(100dvh - 1.25rem);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.stage-touch {
+  width: min(100%, calc((100dvh - 8.75rem) * 16 / 9));
+  max-height: calc(100dvh - 8.75rem);
+}
+
+.stage-title {
+  width: 100%;
+  max-height: none;
+  box-shadow: none;
+}
+
+.touch-btn {
+  min-height: 3.5rem;
+  min-width: 4.5rem;
+  touch-action: none;
+  user-select: none;
+}
